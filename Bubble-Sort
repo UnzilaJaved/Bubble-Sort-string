@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+class BubbleSort{	
+public:
+int n;
+string arr[100];	
+BubbleSort(string arr[],int n)
+{
+this->n=n;
+for(int i=0;i<n;i++)
+{
+	this->arr[i]=arr[i];
+}
+}	
+
+void sorting()
+{
+	int i,j;
+	for(int i=0;i<n-1;i++)
+	{
+		bool swapped=false;
+		for(j=0;j<n-i-1;j++)
+		{
+	if(arr[j]>arr[j+1])
+	{
+		swap(arr[j],arr[j+1]);
+		swapped=true;
+	}
+    }
+    if(swapped==0)
+    {
+    	break;
+	}
+}	
+}
+void display()
+{
+	for(int i=0;i<n;i++)
+	{
+		cout<<" "<<arr[i]<<endl;
+	}
+}
+};
+int main()
+{
+	string arr[5]={"Unzila","Mishkaat","Kulsoom","Ayesha","Anum"};
+	int n=sizeof(arr)/sizeof(arr[0]);
+	BubbleSort s1(arr,n);
+	s1.sorting();
+	s1.display();
+}
